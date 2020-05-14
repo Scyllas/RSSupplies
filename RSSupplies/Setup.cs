@@ -75,7 +75,7 @@ namespace RSSupplies
 
             try
             {
-                for (int i = 1; i < csv.Count; i++)
+                for (int i = 0; i < csv.Count; i++)
                 {
 
                     //Name, FileName, Group, Image Match Value, Doses, Stat Drain, Adrenaline drain, Healing
@@ -88,7 +88,7 @@ namespace RSSupplies
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Issue relating to Supplies CSV");
+                MessageBox.Show("Issue relating to Supplies CSV\n" + ex.Message);
             }
             return supplies;
         }
@@ -99,7 +99,7 @@ namespace RSSupplies
 
             try
             {
-                for (int i = 1; i < csv.Count; i++)
+                for (int i = 0; i < csv.Count; i++)
                 {
                     //Group,Image
                     string[] splitter = csv[i].Split(',');
@@ -111,7 +111,7 @@ namespace RSSupplies
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Issue relating to Group CSV");
+                MessageBox.Show("Issue relating to Group CSV\n" + ex.Message);
             }
             return groups;
         }

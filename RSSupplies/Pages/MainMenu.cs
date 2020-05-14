@@ -33,7 +33,6 @@ namespace RSSupplies
             startButton.Enabled = false;
             stopButton.Enabled = false;
 
-            TopMost = true;
         }
 
 
@@ -136,11 +135,11 @@ namespace RSSupplies
         private void LoadPresetFile(string filePath)
         {
             List<string[]> file = ReadFile(filePath);
-            UpdateBoxes();
+            UpdateBoxes(file);
 
         }
 
-        private void UpdateBoxes()
+        private void UpdateBoxes(List<string[]> file)
         {
            // Data.Boxes[0];
         }
@@ -150,24 +149,48 @@ namespace RSSupplies
             
             using (StreamReader reader = new StreamReader(filePath))
             {
-                List<string[]> file = new List<string[]>
+                List<string[]> file = new List<string[]>();
+                try
                 {
-                    reader.ReadLine().Split(','),
-                    reader.ReadLine().Split(',')
-                };
-
+                    file.Add(reader.ReadLine().Split(','));
+                    file.Add(reader.ReadLine().Split(','));
+                }
+                catch { }//only one line in file
                 return file;
             }
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            if (!IsFormOpen("Supplies"))
+            {
+                Supplies sup = new Supplies();
+                sup.Show();
+            }
+        }
+
+        private bool IsFormOpen(string formName)
+        {
+            FormCollection fc = Application.OpenForms;
+
+            foreach (Form frm in fc)
+            {
+                //iterate through
+                if (frm.Name == formName)
+                {
+                    frm.Show();
+                    frm.BringToFront();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
     }
 }
