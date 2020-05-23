@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +18,9 @@ namespace RSSupplies
 
         int currentBoxNo = 0;
 
-        MainMenu main;
+        Pages.MainMenu.MainMenu main;
 
-        public Screenshot(int boxNo, MainMenu mainMenu)
+        public Screenshot(int boxNo, Pages.MainMenu.MainMenu mainMenu)
         {
             InitializeComponent();
 
@@ -35,7 +37,7 @@ namespace RSSupplies
 
             Cursor = Cursors.Cross;
 
-            Setup.TakeScreenshot(Width, Height, pictureBox1);
+            TakeScreenshot(Width, Height, pictureBox1);
 
             Show();
         }
@@ -120,6 +122,21 @@ namespace RSSupplies
             pictureBox1.CreateGraphics().DrawRectangle(box.Pen, box.X, box.Y, box.Width, box.Height);
         }
 
+        internal static void TakeScreenshot(int width, int height, PictureBox pb)
+        {
 
+            Bitmap printscreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Graphics graphics = Graphics.FromImage(printscreen as Image);
+            graphics.CopyFromScreen(0, 0, 0, 0, printscreen.Size);
+
+            using (MemoryStream s = new MemoryStream())
+            {
+
+                printscreen.Save(s, ImageFormat.Bmp);
+                pb.Size = new Size(width, height);
+
+                pb.Image = Image.FromStream(s);
+            }
+        }
     }
 }

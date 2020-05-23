@@ -1,37 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RSSupplies
+namespace RSSupplies.Pages.Supplies
 {
-    public partial class Supplies : Form
+    class SuppliesFunctions
     {
-        public Supplies()
-        {
-            InitializeComponent();
-        }
 
-        private void Supplies_Load(object sender, EventArgs e)
-        {
-            LoadGrid();
-        }
-
-        private void LoadGrid()
+        internal static void LoadGrid(DataGridView dgvCSV)
         {
             List<string[]> info = ReadFile("info.csv");
-            DisplayInfo(info);
+            DisplayInfo(info, dgvCSV);
         }
 
 
-
-        private List<string[]> ReadFile(string filePath)
+        private static List<string[]> ReadFile(string filePath)
         {
 
             using (StreamReader reader = new StreamReader(filePath))
@@ -48,7 +36,7 @@ namespace RSSupplies
             }
         }
 
-        private void DisplayInfo(List<string[]> info)
+        private static void DisplayInfo(List<string[]> info, DataGridView dgvCSV)
         {
             foreach (string[] line in info)
             {
@@ -56,26 +44,7 @@ namespace RSSupplies
             }
         }
 
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            LoadGrid();
-            DisableModification();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DeleteExistingFile("Supplies.csv");
-            SaveData("Supplies.csv");
-            LoadGrid();
-            DisableModification();
-        }
-
-        private void DeleteExistingFile(string filePath)
-        {
-            File.Delete(filePath);
-        }
-
-        private void SaveData(string filePath)
+        internal static void SaveData(string filePath, DataGridView dgvCSV)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
@@ -121,25 +90,6 @@ namespace RSSupplies
                     writer.WriteLine(output);
                 }
             }
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            EnableModification();
-        }
-
-        private void EnableModification()
-        {
-            dgvCSV.ReadOnly = false;
-            button2.Enabled = true;
-            button4.Enabled = true;
-        }
-
-        private void DisableModification()
-        {
-            dgvCSV.ReadOnly = true;
-            button2.Enabled = false;
-            button4.Enabled = false;
         }
     }
 }
