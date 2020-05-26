@@ -43,15 +43,37 @@ namespace RSSupplies.Pages.MainMenu
 
         private static void UpdateBoxes(List<string[]> file, Pages.MainMenu.MainMenu mainMenu)
         {
+            mainMenu.textBox1.Text = "";
+            mainMenu.textBox2.Text = "";
+            mainMenu.textBox3.Text = "";
+            mainMenu.textBox4.Text = "";
+
+            mainMenu.textBox5.Text = "";
+            mainMenu.textBox6.Text = "";
+            mainMenu.textBox7.Text = "";
+            mainMenu.textBox8.Text = "";
+
             mainMenu.textBox1.Text = file[0][0];
             mainMenu.textBox2.Text = file[0][1];
             mainMenu.textBox3.Text = file[0][2];
             mainMenu.textBox4.Text = file[0][3];
 
-            mainMenu.textBox5.Text = file[1][0];
-            mainMenu.textBox6.Text = file[1][1];
-            mainMenu.textBox7.Text = file[1][2];
-            mainMenu.textBox8.Text = file[1][3];
+            if (file.Count > 1)
+            {
+
+                mainMenu.textBox5.Text = file[1][0];
+                mainMenu.textBox6.Text = file[1][1];
+                mainMenu.textBox7.Text = file[1][2];
+                mainMenu.textBox8.Text = file[1][3];
+
+                mainMenu.cbBeastOfBurden.Checked = true;
+
+            }
+            else
+            {
+                mainMenu.cbBeastOfBurden.Checked = false;
+            }
+
         }
 
         private static List<string[]> ReadFile(string filePath)
@@ -72,20 +94,26 @@ namespace RSSupplies.Pages.MainMenu
 
         internal static void SavePresetFile(string fileName, Pages.MainMenu.MainMenu mainMenu)
         {
-            Common.DeleteExistingFile(fileName);
-            WritePresetFile(fileName, mainMenu);
+            DialogResult confirmResult = MessageBox.Show("Are you sure to overwrite this preset?",
+                                     "Confirm Overwrite!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Common.DeleteExistingFile(fileName);
+                WritePresetFile(fileName, mainMenu);
+            }
         }
 
         private static void WritePresetFile(string fileName, Pages.MainMenu.MainMenu mainMenu)
         {
             using (StreamWriter writer = new StreamWriter(fileName))
             {
-                List<string> inventory = new List<string>() { mainMenu.textBox1.Text, mainMenu.textBox2.Text, mainMenu.textBox3.Text, mainMenu.textBox4.Text};
+                List<string> inventory = new List<string>() { mainMenu.textBox1.Text, mainMenu.textBox2.Text, mainMenu.textBox3.Text, mainMenu.textBox4.Text };
                 writer.WriteLine(BuildInventory(inventory));
 
                 if (mainMenu.cbBeastOfBurden.Checked == true)
                 {
-                    List<string> bob = new List<string>() { mainMenu.textBox1.Text, mainMenu.textBox2.Text, mainMenu.textBox3.Text, mainMenu.textBox4.Text };
+                    List<string> bob = new List<string>() { mainMenu.textBox5.Text, mainMenu.textBox6.Text, mainMenu.textBox7.Text, mainMenu.textBox8.Text };
                     writer.WriteLine(BuildInventory(bob));
                 }
             }
@@ -102,7 +130,7 @@ namespace RSSupplies.Pages.MainMenu
                 output += ",";
             }
 
-            output = output.Substring(0, output.Length-1);
+            output = output.Substring(0, output.Length - 1);
 
             return output;
         }

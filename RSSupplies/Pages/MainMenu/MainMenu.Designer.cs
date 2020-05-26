@@ -246,7 +246,6 @@
             // 
             // button7
             // 
-            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(12, 163);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(90, 23);
@@ -257,7 +256,6 @@
             // 
             // button8
             // 
-            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(108, 163);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(93, 23);

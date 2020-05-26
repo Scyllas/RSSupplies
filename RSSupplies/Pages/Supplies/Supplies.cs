@@ -32,8 +32,8 @@ namespace RSSupplies.Pages.Supplies
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Common.DeleteExistingFile("Supplies.csv");
-            SuppliesFunctions.SaveData("Supplies.csv", dgvCSV);
+            Common.DeleteExistingFile("info.csv");
+            SuppliesFunctions.SaveData("info.csv", dgvCSV);
             SuppliesFunctions.LoadGrid(dgvCSV);
             DisableModification();
         }

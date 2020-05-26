@@ -87,45 +87,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\MainMenu.cs">
+    <Compile Include="Common.cs" />
+    <Compile Include="Pages\MainMenu\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\MainMenu.Designer.cs">
+    <Compile Include="Pages\MainMenu\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Screenshot.cs">
+    <Compile Include="Pages\MainMenu\MainMenuFunctions.cs" />
+    <Compile Include="Pages\Screenshot\Screenshot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Screenshot.Designer.cs">
+    <Compile Include="Pages\Screenshot\Screenshot.Designer.cs">
       <DependentUpon>Screenshot.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Tracker.cs">
+    <Compile Include="Pages\Supplies\SuppliesFunctions.cs" />
+    <Compile Include="Pages\Tracker\Tracker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Tracker.Designer.cs">
+    <Compile Include="Pages\Tracker\Tracker.Designer.cs">
       <DependentUpon>Tracker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Supplies.cs">
+    <Compile Include="Pages\Supplies\Supplies.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Supplies.Designer.cs">
+    <Compile Include="Pages\Supplies\Supplies.Designer.cs">
       <DependentUpon>Supplies.cs</DependentUpon>
     </Compile>
     <Compile Include="Structures.cs" />
-    <Compile Include="ImageCycle.cs" />
+    <Compile Include="Pages\Tracker\ImageCycle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <EmbeddedResource Include="Pages\MainMenu.resx">
+    <EmbeddedResource Include="Pages\MainMenu\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Screenshot.resx">
+    <EmbeddedResource Include="Pages\Screenshot\Screenshot.resx">
       <DependentUpon>Screenshot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Supplies.resx">
+    <EmbeddedResource Include="Pages\Supplies\Supplies.resx">
       <DependentUpon>Supplies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Tracker.resx">
+    <EmbeddedResource Include="Pages\Tracker\Tracker.resx">
       <DependentUpon>Tracker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,7 +160,7 @@
     <None Include="bin\Debug\Assetts\fantasy-3077928_1920.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Capture2.PNG" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

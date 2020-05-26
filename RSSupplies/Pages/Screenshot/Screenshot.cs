@@ -110,7 +110,7 @@ namespace RSSupplies
             main.Enabled = true;
             start = false;
 
-            main.EnableStart();
+            Pages.MainMenu.MainMenuFunctions.EnableStart(main);
 
             Close();
         }

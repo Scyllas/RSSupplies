@@ -63,16 +63,6 @@ namespace RSSupplies.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Capture2 {
-            get {
-                object obj = ResourceManager.GetObject("Capture2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fantasy_3077928_1920 {
             get {
                 object obj = ResourceManager.GetObject("fantasy-3077928_1920", resourceCulture);
