@@ -117,7 +117,7 @@ namespace RSSupplies
             return true;
         }
 
-        internal void SetTextBox(MainMenu main, int currentBoxNo)
+        internal void SetTextBox(Pages.MainMenu.MainMenu main, int currentBoxNo)
         {
             if (currentBoxNo == 0) {
                 main.textBox1.Text = X.ToString();

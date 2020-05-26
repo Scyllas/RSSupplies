@@ -16,9 +16,9 @@ namespace RSSupplies
         internal static List<ImageWithLabel> items = new List<ImageWithLabel>();
         public static bool isGroupsPopulated = false;
 
-        MainMenu parent;
+        Pages.MainMenu.MainMenu parent;
 
-        public Tracker(MainMenu mainMenu)
+        public Tracker(Pages.MainMenu.MainMenu mainMenu)
         {
             parent = mainMenu;
 

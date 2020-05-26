@@ -10,22 +10,6 @@ namespace RSSupplies
 {
     static class Setup
     {
-        internal static void TakeScreenshot(int width, int height, PictureBox pb)
-        {
-            
-            Bitmap printscreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            Graphics graphics = Graphics.FromImage(printscreen as Image);
-            graphics.CopyFromScreen(0, 0, 0, 0, printscreen.Size);
-
-            using (MemoryStream s = new MemoryStream())
-            {
-
-                printscreen.Save(s, ImageFormat.Bmp);
-                pb.Size = new Size(width, height);
-
-                pb.Image = Image.FromStream(s);
-            }
-        }
 
         internal static void ReadInfoCSV()
         {
@@ -34,7 +18,6 @@ namespace RSSupplies
 
             List<string> infocsv = ReadFile(infoFile);
             List<string> groupcsv = ReadFile(groupFile);
-           
 
             Data.Supplies = GetSupplyLines(infocsv);
             Data.Groups = GetGroupLines(groupcsv);
@@ -66,9 +49,6 @@ namespace RSSupplies
             return csv;
         }
 
-
-       
-
         private static List<Supply> GetSupplyLines(List<string> csv)
         {
             List<Supply> supplies = new List<Supply>();
@@ -86,7 +66,7 @@ namespace RSSupplies
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Issue relating to Supplies CSV\n" + ex.Message);
             }
@@ -109,7 +89,7 @@ namespace RSSupplies
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Issue relating to Group CSV\n" + ex.Message);
             }

@@ -1,4 +1,4 @@
-﻿namespace RSSupplies
+﻿namespace RSSupplies.Pages.MainMenu
 {
     partial class MainMenu
     {
@@ -246,23 +246,23 @@
             // 
             // button7
             // 
-            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(12, 163);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(90, 23);
             this.button7.TabIndex = 24;
             this.button7.Text = "Save Preset 1";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button8
             // 
-            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(108, 163);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(93, 23);
             this.button8.TabIndex = 25;
             this.button8.Text = "Save Preset 2";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // MainMenu
             // 

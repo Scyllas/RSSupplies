@@ -33,7 +33,6 @@ C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\tr\ZedGraph.resources.
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\zh-tw\ZedGraph.resources.dll
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.csprojAssemblyReference.cache
-C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.MainMenu.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Screenshot.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Properties.Resources.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.csproj.GenerateResource.cache
@@ -143,4 +142,5 @@ C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\System.Threading.Tasks
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.exe.config
-C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Supplies.resources
+C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Pages.MainMenu.MainMenu.resources
+C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Pages.Supplies.Supplies.resources
