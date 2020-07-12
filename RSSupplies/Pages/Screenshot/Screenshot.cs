@@ -16,6 +16,8 @@ namespace RSSupplies
     {
         internal bool start = false;
 
+        private bool isScreenshotbeingTaken = false;
+
         int currentBoxNo = 0;
 
         Pages.MainMenu.MainMenu main;
@@ -33,13 +35,27 @@ namespace RSSupplies
 
         private void Screenshot_Load(object sender, EventArgs e)
         {
-            Hide();
+            if (!isScreenshotbeingTaken) {
 
-            Cursor = Cursors.Cross;
+                isScreenshotbeingTaken = true;
 
-            TakeScreenshot(Width, Height, pictureBox1);
+                try
+                {
 
-            Show();
+                    Hide();
+
+                    Cursor = Cursors.Cross;
+
+                    TakeScreenshot(pictureBox1);
+
+                    Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Issue when selecting inventory");
+                }
+                
+            }
         }
 
         private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -112,6 +128,9 @@ namespace RSSupplies
 
             Pages.MainMenu.MainMenuFunctions.EnableStart(main);
 
+
+            isScreenshotbeingTaken = false;
+
             Close();
         }
 
@@ -122,7 +141,7 @@ namespace RSSupplies
             pictureBox1.CreateGraphics().DrawRectangle(box.Pen, box.X, box.Y, box.Width, box.Height);
         }
 
-        internal static void TakeScreenshot(int width, int height, PictureBox pb)
+        internal static void TakeScreenshot(PictureBox pb)
         {
 
             Bitmap printscreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
@@ -133,7 +152,7 @@ namespace RSSupplies
             {
 
                 printscreen.Save(s, ImageFormat.Bmp);
-                pb.Size = new Size(width, height);
+                pb.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
 
                 pb.Image = Image.FromStream(s);
             }

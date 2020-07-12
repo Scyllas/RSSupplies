@@ -37,7 +37,7 @@ namespace RSSupplies.Pages.MainMenu
         {
             TakeScreenshotAsync(1);
         }
-        
+
         private void TakeScreenshotAsync(int inventory)
         {
             Screenshot s = new Screenshot(inventory, this);
@@ -48,7 +48,7 @@ namespace RSSupplies.Pages.MainMenu
         {
             MainMenuFunctions.EnableStart(this);
         }
-        
+
         private void StartButton_Click(object sender, EventArgs e)
         {
             startButton.Enabled = false;
@@ -91,7 +91,7 @@ namespace RSSupplies.Pages.MainMenu
             MainMenuFunctions.LoadPresetFile("Preset2.csv", this);
         }
 
-        
+
         private void Button3_Click(object sender, EventArgs e)
         {
             //groups button
