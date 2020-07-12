@@ -132,9 +132,10 @@ C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Release\sv\ZedGraph.resource
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Release\tr\ZedGraph.resources.dll
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Release\zh-cn\ZedGraph.resources.dll
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Release\zh-tw\ZedGraph.resources.dll
-C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csprojAssemblyReference.cache
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.exe.config
+C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Pages.MainMenu.MainMenu.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Screenshot.resources
+C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Pages.Supplies.Supplies.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Tracker.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Properties.Resources.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csproj.GenerateResource.cache
@@ -142,5 +143,3 @@ C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csproj.Co
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csproj.CopyComplete
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.exe
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.pdb
-C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Pages.MainMenu.MainMenu.resources
-C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.Pages.Supplies.Supplies.resources
