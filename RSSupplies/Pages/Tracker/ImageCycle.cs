@@ -14,7 +14,7 @@ namespace RSSupplies
 {
     class ImageCycle
     {
-        static readonly bool debugMode = false;
+        static readonly bool debugMode = true;
         readonly int boxNo;
 
         internal bool isRunning = false;
