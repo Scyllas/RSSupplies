@@ -143,3 +143,4 @@ C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csproj.Co
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csproj.CopyComplete
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.exe
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.pdb
+C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Release\RSSupplies.csprojAssemblyReference.cache
