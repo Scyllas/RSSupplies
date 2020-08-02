@@ -30,9 +30,7 @@ namespace RSSupplies
 
             using (StreamWriter sw = File.AppendText(path))
             {
-                sw.WriteLine("This");
-                sw.WriteLine("is Extra");
-                sw.WriteLine("Text");
+                sw.WriteLine(message);
             }
 
         }
