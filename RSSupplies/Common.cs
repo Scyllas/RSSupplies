@@ -18,12 +18,23 @@ namespace RSSupplies
 
         internal static void Log(string message)
         {
-            if (!File.Exists("Log.txt"))
+
+            string path = @"log.txt";
+            // This text is added only once to the file.
+            if (!File.Exists(path))
             {
-                File.Create("Log.txt");
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(path)) { }
+
             }
 
-            File.AppendText(message);
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine("This");
+                sw.WriteLine("is Extra");
+                sw.WriteLine("Text");
+            }
+
         }
     }
 }
