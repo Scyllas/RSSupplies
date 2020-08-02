@@ -78,9 +78,16 @@ namespace RSSupplies
             {
                 foreach (ImageWithLabel imglab in items)
                 {
-                    if (g.name == imglab.label.Name)
+                    try
                     {
-                        imglab.label.Text = FormatNumber(g.value);
+                        if (g.name == imglab.label.Name)
+                        {
+                            imglab.label.Text = FormatNumber(g.value);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Common.Log(ex.Message);
                     }
                 }
             }
@@ -98,13 +105,21 @@ namespace RSSupplies
 
         private static string FormatNumber(int num)
         {
-            if (num >= 100000)
-                return FormatNumber(num / 1000) + "K";
-            if (num >= 10000)
+            try
             {
-                return (num / 1000D).ToString("0.#") + "K";
+                if (num >= 100000)
+                    return FormatNumber(num / 1000) + "K";
+                if (num >= 10000)
+                {
+                    return (num / 1000D).ToString("0.#") + "K";
+                }
+            }
+            catch (Exception ex)
+            {
+                Common.Log(ex.Message);
             }
             return num.ToString("#,0");
+
         }
 
         private void TimerUpdate_Tick(object sender, EventArgs e)
@@ -115,7 +130,7 @@ namespace RSSupplies
                 Thread mainLoop = new Thread(ThreadedMainLoop);
                 mainLoop.Start();
 
-                while (mainLoop.IsAlive);
+                while (mainLoop.IsAlive) ;
 
                 UpdateValues();
 
@@ -129,11 +144,17 @@ namespace RSSupplies
 
         private void ThreadedMainLoop()
         {
-
-            parent.InventoryOne.IdentifyInventory();
-            if (parent.cbBeastOfBurden.Checked)
+            try
             {
-                parent.InventoryTwo.IdentifyInventory();
+                parent.InventoryOne.IdentifyInventory();
+                if (parent.cbBeastOfBurden.Checked)
+                {
+                    parent.InventoryTwo.IdentifyInventory();
+                }
+            }
+            catch (Exception ex)
+            {
+                Common.Log(ex.Message);
             }
         }
     }
