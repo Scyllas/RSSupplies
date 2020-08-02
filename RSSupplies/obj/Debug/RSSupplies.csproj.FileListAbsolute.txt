@@ -32,7 +32,6 @@ C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\sv\ZedGraph.resources.
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\tr\ZedGraph.resources.dll
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\bin\Debug\zh-tw\ZedGraph.resources.dll
-C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.csprojAssemblyReference.cache
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Screenshot.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.Properties.Resources.resources
 C:\Users\Ben\source\repos\RSSupplies\RSSupplies\obj\Debug\RSSupplies.csproj.GenerateResource.cache

@@ -123,7 +123,7 @@ namespace RSSupplies
             }
             catch (Exception ex)
             {
-
+                Common.Log(ex.Message);
             }
         }
 
