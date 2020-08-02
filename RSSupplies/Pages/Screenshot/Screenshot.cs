@@ -53,6 +53,7 @@ namespace RSSupplies
                 catch (Exception ex)
                 {
                     MessageBox.Show("Issue when selecting inventory");
+                    Common.Log(ex.Message);
                 }
                 
             }
@@ -145,6 +146,7 @@ namespace RSSupplies
         {
 
             Bitmap printscreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            
             Graphics graphics = Graphics.FromImage(printscreen as Image);
             graphics.CopyFromScreen(0, 0, 0, 0, printscreen.Size);
 

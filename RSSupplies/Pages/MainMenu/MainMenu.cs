@@ -51,20 +51,27 @@ namespace RSSupplies.Pages.MainMenu
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            startButton.Enabled = false;
-            stopButton.Enabled = true;
-            cbBeastOfBurden.Enabled = false;
-
-            tracker = new Tracker(this);
-            tracker.Show();
-
-            InventoryOne = new ImageCycle(0);
-
-            if (cbBeastOfBurden.Checked)
+            try
             {
-                InventoryTwo = new ImageCycle(1);
-            }
 
+                startButton.Enabled = false;
+                stopButton.Enabled = true;
+                cbBeastOfBurden.Enabled = false;
+
+                tracker = new Tracker(this);
+                tracker.Show();
+
+                InventoryOne = new ImageCycle(0);
+
+                if (cbBeastOfBurden.Checked)
+                {
+                    InventoryTwo = new ImageCycle(1);
+                }
+            }
+            catch (Exception ex)
+            {
+                Common.Log(ex.Message);
+            }
         }
 
         private void StopButton_Click(object sender, EventArgs e)

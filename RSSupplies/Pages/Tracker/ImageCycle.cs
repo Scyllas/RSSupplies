@@ -118,9 +118,9 @@ namespace RSSupplies
                             file.Delete();
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
+                        Common.Log(ex.Message);
                     }
                     try
                     {
@@ -132,15 +132,15 @@ namespace RSSupplies
                             file.Delete();
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
+                        Common.Log(ex.Message);
                     }
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    Common.Log(ex.Message);
                 }
             }
         }
@@ -169,9 +169,9 @@ namespace RSSupplies
                         target.Save(@"Samples\testscreen" + DateTime.Now.Ticks + ".jpg");
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    Common.Log(ex.Message);
                 }
             }
         }
@@ -194,7 +194,7 @@ namespace RSSupplies
             }
             catch (Exception)
             {
-                //TODO: add exception handling
+                Common.Log(ex.Message);
             }
         }
 

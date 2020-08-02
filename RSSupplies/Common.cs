@@ -15,5 +15,15 @@ namespace RSSupplies
             File.Delete(filePath);
         }
 
+
+        internal static void Log(string message)
+        {
+            if (!File.Exists("Log.txt"))
+            {
+                File.Create("Log.txt");
+            }
+
+            File.AppendText(message);
+        }
     }
 }
